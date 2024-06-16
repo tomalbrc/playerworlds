@@ -40,7 +40,7 @@ vineflower {
 }
 
 loom {
-	accessWidenerPath = file("src/main/resources/playerlands.accesswidener")
+	accessWidenerPath = file("src/main/resources/playerworlds.accesswidener")
 }
 
 base {

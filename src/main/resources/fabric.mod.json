@@ -1,9 +1,9 @@
 {
   "schemaVersion": 1,
-  "id": "playerlands",
+  "id": "playerworlds",
   "version": "${version}",
-  "name": "PlayerLands",
-  "description": "Provim Lost Lands - playerlands",
+  "name": "playerworlds",
+  "description": "Provim Lost Lands - playerworlds",
   "authors": [
     "PinkGoosik"
   ],
@@ -13,24 +13,24 @@
     "tomalbrc"
   ],
   "license": "MIT",
-  "icon": "assets/playerlands/icon.png",
+  "icon": "assets/playerworlds/icon.png",
   "environment": "*",
   "entrypoints": {
     "main": [
-      "playerlands.PlayerlandsMod"
+      "playerworlds.PlayerworldsMod"
     ],
     "cardinal-components": [
-      "playerlands.data.PlayerlandsComponents"
+      "playerworlds.data.PlayerworldsComponents"
     ]
   },
-  "accessWidener": "playerlands.accesswidener",
+  "accessWidener": "playerworlds.accesswidener",
   "mixins": [
-    "playerlands.mixins.json"
+    "playerworlds.mixins.json"
   ],
   "custom": {
     "cardinal-components": [
-      "playerlands:world_data",
-      "playerlands:player_data"
+      "playerworlds:world_data",
+      "playerworlds:player_data"
     ]
   },
   "depends": {
