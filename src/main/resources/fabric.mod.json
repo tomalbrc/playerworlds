@@ -1,0 +1,42 @@
+{
+  "schemaVersion": 1,
+  "id": "playerlands",
+  "version": "${version}",
+  "name": "PlayerLands",
+  "description": "Provim Lost Lands - playerlands",
+  "authors": [
+    "PinkGoosik"
+  ],
+  "contributors": [
+    "KujouMolean",
+    "Drex",
+    "tomalbrc"
+  ],
+  "license": "MIT",
+  "icon": "assets/playerlands/icon.png",
+  "environment": "*",
+  "entrypoints": {
+    "main": [
+      "playerlands.PlayerlandsMod"
+    ],
+    "cardinal-components": [
+      "playerlands.data.PlayerlandsComponents"
+    ]
+  },
+  "accessWidener": "playerlands.accesswidener",
+  "mixins": [
+    "playerlands.mixins.json"
+  ],
+  "custom": {
+    "cardinal-components": [
+      "playerlands:world_data",
+      "playerlands:player_data"
+    ]
+  },
+  "depends": {
+    "fabricloader": "*",
+    "fabric": "*",
+    "minecraft": ">=1.20.2-rc.1 <1.21",
+    "java": ">=17"
+  }
+}
