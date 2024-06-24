@@ -184,13 +184,14 @@ public class Land {
 		}
 		RuntimeWorldHandle handle = this.fantasy.getOrOpenPersistentWorld(PlayerworldsMod.id(this.owner.uuid.toString()), this.landConfig);
 		WorldBorder border = handle.asWorld().getWorldBorder();
-		border.setSize(400);
+		border.setSize(300);
 		return handle;
 	}
 
 
 	private RuntimeWorldConfig createIslandConfig() {
-		WorldPreset preset = server.getRegistryManager().get(RegistryKeys.WORLD_PRESET).get(new Identifier("minecraft", "land"));
+		var i = server.getOverworld().getRandom().nextBetween(0, 2);
+		WorldPreset preset = server.getRegistryManager().get(RegistryKeys.WORLD_PRESET).get(Identifier.of("main", i == 0 ? "plain" : i == 1 ? "savanna" : "swamp"));
 		ChunkGenerator chunkGenerator;
 
 		if (preset != null) {
@@ -226,7 +227,7 @@ public class Land {
 		if(!isMember(visitor)) {
 			this.getOwner().ifPresent(owner -> {
 				if(!visitor.getUuid().equals(owner.getUuid())) {
-					owner.sendMessage(PlayerworldsTexts.prefixed("message.playerworlds.land_visit.visit", map -> map.put("%visitor%", visitor.getName().getString())));
+					owner.sendMessage(PlayerworldsTexts.prefixed("message.playerworlds.world_visit.visit", map -> map.put("%visitor%", visitor.getName().getString())));
 				}
 			});
 		}

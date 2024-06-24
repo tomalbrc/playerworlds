@@ -45,7 +45,7 @@ public class AcceptCommand {
 				}
 			}
 			else {
-				player.sendMessage(PlayerworldsTexts.prefixed("message.playerworlds.accept.no_land"));
+				player.sendMessage(PlayerworldsTexts.prefixed("message.playerworlds.accept.no_world"));
 			}
 		}
 		else {

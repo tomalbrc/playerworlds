@@ -1,6 +1,7 @@
 package playerworlds.data;
 
-import dev.onyxstudios.cca.api.v3.component.ComponentV3;
+import net.minecraft.registry.RegistryWrapper;
+import org.ladysnake.cca.api.v3.component.ComponentV3;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.nbt.NbtCompound;
 import playerworlds.logic.Playerworlds;
@@ -38,7 +39,7 @@ public class PlayerComponent implements ComponentV3 {
 	}
 
 	@Override
-	public void readFromNbt(NbtCompound tag) {
+	public void readFromNbt(NbtCompound tag, RegistryWrapper.WrapperLookup registryLookup) {
 		NbtCompound landsNbt = tag.getCompound("lands");
 		int size = landsNbt.getInt("size");
 		for(int i = 0; i < size; i++) {
@@ -52,7 +53,7 @@ public class PlayerComponent implements ComponentV3 {
 	}
 
 	@Override
-	public void writeToNbt(NbtCompound tag) {
+	public void writeToNbt(NbtCompound tag, RegistryWrapper.WrapperLookup registryLookup) {
 		NbtCompound landsNbt = new NbtCompound();
 		landsNbt.putInt("size", this.lands.size());
 		for(int i = 0; i < this.lands.size(); i++) {

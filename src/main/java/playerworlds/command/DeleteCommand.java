@@ -43,16 +43,16 @@ public class DeleteCommand {
 
 				if(seconds >= Playerworlds.config.landDeletionCooldown || player.isCreative()) {
 					lands.delete(player);
-					player.sendMessage(PlayerworldsTexts.prefixed("message.playerworlds.land_delete.success"));
+					player.sendMessage(PlayerworldsTexts.prefixed("message.playerworlds.world_delete.success"));
 				}
 				else {
-					player.sendMessage(PlayerworldsTexts.prefixed("message.playerworlds.land_delete.too_often"));
+					player.sendMessage(PlayerworldsTexts.prefixed("message.playerworlds.world_delete.too_often"));
 				}
 
-			}, () -> player.sendMessage(PlayerworldsTexts.prefixed("message.playerworlds.land_delete.fail")));
+			}, () -> player.sendMessage(PlayerworldsTexts.prefixed("message.playerworlds.world_delete.fail")));
 		}
 		else {
-			player.sendMessage(PlayerworldsTexts.prefixed("message.playerworlds.land_delete.warning"));
+			player.sendMessage(PlayerworldsTexts.prefixed("message.playerworlds.world_delete.warning"));
 		}
 	}
 
@@ -65,12 +65,12 @@ public class DeleteCommand {
 			var hours = ChronoUnit.HOURS.between(created, now);
 
 			if(hours >= 24 || player.isCreative()) {
-				player.sendMessage(PlayerworldsTexts.prefixed("message.playerworlds.land_delete.warning"));
+				player.sendMessage(PlayerworldsTexts.prefixed("message.playerworlds.world_delete.warning"));
 			}
 			else {
-				player.sendMessage(PlayerworldsTexts.prefixed("message.playerworlds.land_delete.too_often"));
+				player.sendMessage(PlayerworldsTexts.prefixed("message.playerworlds.world_delete.too_often"));
 			}
 
-		}, () -> player.sendMessage(PlayerworldsTexts.prefixed("message.playerworlds.land_delete.fail")));
+		}, () -> player.sendMessage(PlayerworldsTexts.prefixed("message.playerworlds.world_delete.fail")));
 	}
 }

@@ -50,6 +50,6 @@ public class KickCommand {
 					});
 				}
 			}
-		}, () -> player.sendMessage(PlayerworldsTexts.prefixed("message.playerworlds.kick_visitor.no_land")));
+		}, () -> player.sendMessage(PlayerworldsTexts.prefixed("message.playerworlds.kick_visitor.no_world")));
 	}
 }

@@ -58,7 +58,7 @@ public class Invites {
 				land.members.add(new Member(player));
 			}
 			else {
-				player.sendMessage(PlayerworldsTexts.prefixed("message.playerworlds.accept.no_land"));
+				player.sendMessage(PlayerworldsTexts.prefixed("message.playerworlds.accept.no_world"));
 			}
 		}
 	}

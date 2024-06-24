@@ -59,7 +59,7 @@ public class HomeCommand {
 				player.sendMessage(PlayerworldsTexts.prefixed("message.playerworlds.home.success"));
 				land.visitAsMember(player);
 			}
-		}, () -> player.sendMessage(PlayerworldsTexts.prefixed("message.playerworlds.home.no_land")));
+		}, () -> player.sendMessage(PlayerworldsTexts.prefixed("message.playerworlds.home.no_world")));
 	}
 
 	public static void run(ServerPlayerEntity visitor, String landOwner) {
@@ -79,7 +79,7 @@ public class HomeCommand {
 				}
 			}
 		}, () -> {
-			visitor.sendMessage(PlayerworldsTexts.prefixed("message.playerworlds.visit_home.no_land"));
+			visitor.sendMessage(PlayerworldsTexts.prefixed("message.playerworlds.visit_home.no_world"));
 			PlayerworldsComponents.PLAYER_DATA.get(visitor).removeIsland(landOwner);
 		});
 	}

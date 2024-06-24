@@ -68,7 +68,7 @@ public class SettingCommands {
 				land.locked = true;
 			}
 
-		}, () -> player.sendMessage(PlayerworldsTexts.prefixed("message.playerworlds.settings.no_land")));
+		}, () -> player.sendMessage(PlayerworldsTexts.prefixed("message.playerworlds.settings.no_world")));
 	}
 
 	static void setSpawnPos(ServerPlayerEntity player, BlockPos pos, int yaw, int pitch) {
@@ -77,7 +77,7 @@ public class SettingCommands {
 			String posText = pos.getX() + " " + pos.getY() + " " + pos.getZ() + " " + yaw + " " + pitch;
 			player.sendMessage(PlayerworldsTexts.prefixed("message.playerworlds.settings.spawn_pos_change", map -> map.put("%pos%", posText)));
 
-		}, () -> player.sendMessage(PlayerworldsTexts.prefixed("message.playerworlds.settings.no_land")));
+		}, () -> player.sendMessage(PlayerworldsTexts.prefixed("message.playerworlds.settings.no_world")));
 	}
 
 	static void setVisitsPos(ServerPlayerEntity player, BlockPos pos, int yaw, int pitch) {
@@ -86,6 +86,6 @@ public class SettingCommands {
 			String posText = pos.getX() + " " + pos.getY() + " " + pos.getZ() + " " + yaw + " " + pitch;
 			player.sendMessage(PlayerworldsTexts.prefixed("message.playerworlds.settings.visits_pos_change", map -> map.put("%pos%", posText)));
 
-		}, () -> player.sendMessage(PlayerworldsTexts.prefixed("message.playerworlds.settings.no_land")));
+		}, () -> player.sendMessage(PlayerworldsTexts.prefixed("message.playerworlds.settings.no_world")));
 	}
 }

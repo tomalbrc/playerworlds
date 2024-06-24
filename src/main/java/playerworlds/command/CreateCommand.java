@@ -28,14 +28,14 @@ public class CreateCommand {
 		LandStuck lands = Playerworlds.instance.worlds;
 
 		if(lands.get(player).isPresent()) {
-			player.sendMessage(PlayerworldsTexts.prefixed("message.playerworlds.land_create.fail"));
+			player.sendMessage(PlayerworldsTexts.prefixed("message.playerworlds.world_create.fail"));
 		}
 		else {
 			Land land = lands.create(player);
 			if (Playerworlds.config.teleportAfterIslandCreation) {
 				land.visitAsMember(player);
 			}
-			player.sendMessage(PlayerworldsTexts.prefixed("message.playerworlds.land_create.success"));
+			player.sendMessage(PlayerworldsTexts.prefixed("message.playerworlds.world_create.success"));
 		}
 	}
 }

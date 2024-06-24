@@ -19,7 +19,7 @@ import playerworlds.util.WorldProtection;
 public abstract class HopperBlockMixin {
 
 	@Inject(method = "onUse", at = @At("HEAD"), cancellable = true)
-	void onUse(BlockState state, World world, BlockPos pos, PlayerEntity player, Hand hand, BlockHitResult hit, CallbackInfoReturnable<ActionResult> cir) {
+	void onUse(BlockState state, World world, BlockPos pos, PlayerEntity player, BlockHitResult hit, CallbackInfoReturnable<ActionResult> cir) {
 		if(!world.isClient) {
 			if(!WorldProtection.canModify(world, player)) {
 				player.sendMessage(PlayerworldsTexts.prefixed("message.playerworlds.world_protection.hopper_open"), true);

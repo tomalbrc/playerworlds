@@ -69,7 +69,7 @@ public class MemberCommands {
 					Playerworlds.instance.invites.create(land, newcomer);
 				}
 			}
-		}, () -> inviter.sendMessage(PlayerworldsTexts.prefixed("message.playerworlds.invite_member.no_land")));
+		}, () -> inviter.sendMessage(PlayerworldsTexts.prefixed("message.playerworlds.invite_member.no_world")));
 	}
 
 	static void remove(ServerPlayerEntity player, String removed) {
@@ -86,6 +86,6 @@ public class MemberCommands {
 					player.sendMessage(PlayerworldsTexts.prefixed("message.playerworlds.remove_member.not_member"));
 				}
 			}
-		}, () -> player.sendMessage(PlayerworldsTexts.prefixed("message.playerworlds.remove_member.no_land")));
+		}, () -> player.sendMessage(PlayerworldsTexts.prefixed("message.playerworlds.remove_member.no_world")));
 	}
 }

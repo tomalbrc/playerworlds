@@ -44,19 +44,8 @@ public abstract class ServerPlayerEntityMixin extends PlayerEntity {
 		}
 	}
 
-	@Redirect(method = "moveToWorld", at = @At(value = "INVOKE", target = "Lnet/minecraft/server/world/ServerWorld;getRegistryKey()Lnet/minecraft/registry/RegistryKey;"))
-	public RegistryKey<World> moveToWorld_redirectRegistryKey(ServerWorld instance) {
-		return PlayerworldsLevels.redirect(instance.getRegistryKey());
-	}
-
-	@Redirect(method = "getTeleportTarget", at = @At(value = "INVOKE", target = "Lnet/minecraft/server/world/ServerWorld;getRegistryKey()Lnet/minecraft/registry/RegistryKey;"))
-	public RegistryKey<World> getTeleportTarget_redirectRegistryKey(ServerWorld instance) {
-		return PlayerworldsLevels.redirect(instance.getRegistryKey());
-	}
-
 	@Redirect(method = "worldChanged", at = @At(value = "INVOKE", target = "Lnet/minecraft/server/world/ServerWorld;getRegistryKey()Lnet/minecraft/registry/RegistryKey;"))
 	public RegistryKey<World> worldChanged_redirectRegistryKey(ServerWorld instance) {
 		return PlayerworldsLevels.redirect(instance.getRegistryKey());
 	}
-
 }

@@ -31,23 +31,23 @@ public class VisitCommand {
 
 		Playerworlds.instance.worlds.get(owner).ifPresentOrElse(land -> {
 			if(!land.isMember(visitor) && land.isBanned(visitor)) {
-				visitor.sendMessage(PlayerworldsTexts.prefixed("message.playerworlds.land_visit.ban", map -> map.put("%owner%", ownerName)));
+				visitor.sendMessage(PlayerworldsTexts.prefixed("message.playerworlds.world_visit.ban", map -> map.put("%owner%", ownerName)));
 			}
 			else {
 				if(!land.locked) {
 					if(visitor.getWorld().getRegistryKey().getValue().equals(PlayerworldsMod.id(land.owner.uuid.toString()))) {
-						visitor.sendMessage(PlayerworldsTexts.prefixed("message.playerworlds.land_visit.fail", map -> map.put("%owner%", ownerName)));
+						visitor.sendMessage(PlayerworldsTexts.prefixed("message.playerworlds.world_visit.fail", map -> map.put("%owner%", ownerName)));
 					}
 					else {
-						visitor.sendMessage(PlayerworldsTexts.prefixed("message.playerworlds.land_visit.success", map -> map.put("%owner%", ownerName)));
+						visitor.sendMessage(PlayerworldsTexts.prefixed("message.playerworlds.world_visit.success", map -> map.put("%owner%", ownerName)));
 						land.visitAsVisitor(visitor);
 					}
 				}
 				else {
-					visitor.sendMessage(PlayerworldsTexts.prefixed("message.playerworlds.land_visit.no_visits", map -> map.put("%owner%", ownerName)));
+					visitor.sendMessage(PlayerworldsTexts.prefixed("message.playerworlds.world_visit.no_visits", map -> map.put("%owner%", ownerName)));
 				}
 			}
 
-		}, () -> visitor.sendMessage(PlayerworldsTexts.prefixed("message.playerworlds.land_visit.no_land", map -> map.put("%owner%", ownerName))));
+		}, () -> visitor.sendMessage(PlayerworldsTexts.prefixed("message.playerworlds.world_visit.no_world", map -> map.put("%owner%", ownerName))));
 	}
 }

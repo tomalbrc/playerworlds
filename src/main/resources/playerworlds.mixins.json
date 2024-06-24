@@ -6,7 +6,6 @@
   "mixins": [
     "AbstractFireBlockMixin",
     "block.FireBlockMixin",
-    "block.entity.EndGatewayBlockEntityMixin",
     "entity.EntityMixin",
     "entity.ServerPlayerEntityMixin",
     "server.MinecraftServerMixin",

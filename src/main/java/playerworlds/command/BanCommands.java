@@ -85,7 +85,7 @@ public class BanCommands {
 					}
 				}
 			}
-		}, () -> player.sendMessage(PlayerworldsTexts.prefixed("message.playerworlds.ban_player.no_land")));
+		}, () -> player.sendMessage(PlayerworldsTexts.prefixed("message.playerworlds.ban_player.no_world")));
 	}
 
 	static void unban(ServerPlayerEntity player, String unbanned) {
@@ -97,6 +97,6 @@ public class BanCommands {
 				land.bans.removeIf(member -> member.name.equals(unbanned));
 				player.sendMessage(PlayerworldsTexts.prefixed("message.playerworlds.unban_player.success", map -> map.put("%player%", unbanned)));
 			}
-		}, () -> player.sendMessage(PlayerworldsTexts.prefixed("message.playerworlds.unban_player.no_land")));
+		}, () -> player.sendMessage(PlayerworldsTexts.prefixed("message.playerworlds.unban_player.no_world")));
 	}
 }
