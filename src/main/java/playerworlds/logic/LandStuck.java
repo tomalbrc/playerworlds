@@ -20,7 +20,9 @@ public class LandStuck {
 		var land = new Land(player);
 		land.freshCreated = true;
 
-		BlockPos spawnPos = land.getHandle().asWorld().getSpawnPos();
+		var pos = player.getWorldSpawnPos(land.getHandle().asWorld(), land.getHandle().asWorld().getSpawnPos());
+
+		BlockPos spawnPos = pos;
 		land.spawnPos = new PlayerPosition(spawnPos.getX(), spawnPos.getY(), spawnPos.getZ());
 		land.visitsPos = new PlayerPosition(spawnPos.getX(), spawnPos.getY(), spawnPos.getZ());
 

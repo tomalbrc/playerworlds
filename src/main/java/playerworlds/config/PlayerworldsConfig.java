@@ -21,7 +21,6 @@ public class PlayerworldsConfig {
 	public PlayerPosition defaultSpawnPos = new PlayerPosition(0.5D, 75.0D, 0.5D, 0, 0);
 	@JsonAdapter(PlayerPosition.JsonAdapter.class)
 	public PlayerPosition defaultVisitsPos = new PlayerPosition(0.5D, 75.0D, 0.5D, 0, 0);
-	public boolean hubProtectedByDefault = false;
 	public int landDeletionCooldown = 0;//(7 * 24 * 60) * 60;
 
 	public boolean teleportAfterIslandCreation = false;
